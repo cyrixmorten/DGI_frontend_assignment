@@ -15,3 +15,5 @@ npm-debug.log
 .tmp/
 .vscode/
 package-lock.json
+
+dgi-demo/dgi.bundle.js
