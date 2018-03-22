@@ -1,5 +1,41 @@
-/**
- * Main stylesheet
- */
+@import "../../node_modules/animate.css/animate.min";
+@import "../../node_modules/angular-fx/src/css/angular-fx";
 
 
+// Animate.css overrides
+@keyframes fadeInRight{ from{ opacity: 0; transform: translate3d(20px, 0, 0); }}
+@keyframes fadeInLeft{ from{ opacity: 0;transform: translate3d(-20px, 0, 0); }}
+@keyframes fadeInUp{ from{ opacity: 0;transform: translate3d(0, 20px, 0); }}
+@keyframes fadeInDown{ from{ opacity: 0;transform: translate3d(0, -20px, 0); }}
+
+.animate {
+
+  // For custom animations see: ter,https://css-tricks.com/animations-the-angular-way/
+  &.staggering {
+
+    transition: all ease-out 250ms;
+
+    &.ng-enter {
+      opacity: 0;
+      padding-left: 5px;
+    }
+
+    &.ng-enter-stagger {
+      transition-delay: 0.1s;
+      -webkit-transition-delay: 0.1s;
+      /*
+          FROM THE DOCUMENTATION:
+          In case the stagger doesn't work then these two values must be set
+          to 0 to avoid an accidental CSS inheritance.
+      */
+      transition-duration: 0s;
+      -webkit-transition-duration: 0s;
+    }
+
+    &.ng-enter-active {
+      opacity: 1;
+      padding-left: 0;
+    }
+
+  }
+}
