@@ -43,7 +43,7 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     {loader: 'style-loader', options: {sourceMap: false}},
-                    {loader: 'postcss-loader', options: {sourceMap: false}}
+                    {loader: 'css-loader', options: {importLoaders: 1, sourceMap: false}}
                 ]
             },
             {
