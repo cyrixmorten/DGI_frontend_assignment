@@ -24,10 +24,10 @@ export class NasaRoversApi {
 
 
         // fake it - take first 10
-        return _.take(require('../../../data/nasa.json').photos, 10);
+        // return _.take(require('../../../data/nasa.json').photos, 10);
 
-        // let response = await this.$http(httpRequest);
-        // return response.data.photos;
+        let response = await this.$http(httpRequest);
+        return response.data.photos;
     }
 
 }
