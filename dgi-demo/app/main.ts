@@ -10,15 +10,10 @@ if (process.env.NODE_ENV !== 'production') {
   require('../index.html');
 }
 
-import {NasaRoversApi} from "./api/nasa/NasaRoversApi";
 import {PAGES_MODULE} from "./pages/pages.module";
 
 angular.module('DGI-NASA', [
   SETUP_MODULE,
   API_MODULE,
   PAGES_MODULE
-]).run([NasaRoversApi.NAME, async (NasaRoversApi: NasaRoversApi) => {
-  let pictures = await NasaRoversApi.query();
-
-  console.log('pictures: ', pictures);
-}]);
+]);

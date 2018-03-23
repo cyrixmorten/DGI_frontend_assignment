@@ -12,4 +12,4 @@ angular.module(TRANSITION_HISTORY_COMPONENT, ['ui.router'])
         });
     }])
     // TODO: If this module is ever shared, DefaultStateNameConstant should be configurable by consumer
-    .constant(DefaultStateNameConstant, 'root');
+    .constant(DefaultStateNameConstant, 'root.front');

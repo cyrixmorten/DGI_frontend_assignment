@@ -23,6 +23,7 @@ export interface RoverPicture {
     id: string;
     sol: string;
     img_src: string;
+    earth_date: string;
     camera: RoverCamera;
     rover: Rover;
 }

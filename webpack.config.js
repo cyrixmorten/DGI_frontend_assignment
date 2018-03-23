@@ -109,10 +109,9 @@ module.exports = {
             ignored: /node_modules/
         },
         historyApiFallback: {
-          index: "./dgi-demo/index.html"
+          index: "dgi-demo/index.html"
         },
         publicPath: path.resolve(__dirname, '/'),
-        contentBase: path.resolve(__dirname, './dgi-demo/'),
     },
     plugins: [
         provideVars,
@@ -127,7 +126,6 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         sourceMapFilename: "[name].bundle.js.map",
-        path: path.resolve(__dirname, './dgi-demo'),
-        publicPath: path.resolve(__dirname, '/')
+        path: path.resolve(__dirname, 'dgi-demo')
     }
 };

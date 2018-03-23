@@ -5,16 +5,18 @@ import {CONTENT_FRAME_COMPONENT} from "../../components/content-frame/content.fr
 
 export const FRONT_PAGE_MODULE = 'page.front';
 
+export const frontPageState = {
+    name: 'root.front',
+    url: '/',
+    views: {
+        'content': {
+            component: FrontPageComponent.NAME
+        }
+    }
+};
+
 angular.module(FRONT_PAGE_MODULE, [CONTENT_FRAME_COMPONENT, 'ngAnimate', 'ui.router'])
 .component(FrontPageComponent.NAME, new FrontPageComponent())
 .config(['$stateProvider', ($stateProvider: ng.ui.IStateProvider) => {
-    $stateProvider.state({
-            name: 'root.front',
-            url: '/',
-            views: {
-                'content': {
-                    component: FrontPageComponent.NAME
-                }
-            }
-        });
+    $stateProvider.state(frontPageState);
 }]);

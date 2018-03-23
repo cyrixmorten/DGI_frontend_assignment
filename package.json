@@ -68,6 +68,7 @@
     "angular-aria": "^1.6.9",
     "angular-fx": "^1.1.0",
     "angular-material": "^1.1.7",
+    "angular-sanitize": "^1.6.9",
     "jquery": "^3.3.1",
     "tslib": "^1.9.0",
     "typescript": "^2.7.2"

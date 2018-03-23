@@ -1,7 +1,7 @@
 import * as angular from "angular";
 
 import "@uirouter/angularjs";
-import {FRONT_PAGE_MODULE} from "./front/front.module";
+import {FRONT_PAGE_MODULE, frontPageState} from "./front/front.module";
 import {ROVER_PAGE_MODULE} from "./rover/rover.module";
 
 export const PAGES_MODULE = 'pages.module';
@@ -21,12 +21,14 @@ angular.module(PAGES_MODULE, [FRONT_PAGE_MODULE, ROVER_PAGE_MODULE, 'ui.router']
                 let rootState = {
                     name: 'root',
                     abstract: true,
-                    template: `<div layout="row" layout-align="center center">
-                                    <div flex="75" flex-gt-sm="66" flex-gt-lg="50" layout-padding>
-                                        <div ui-view="content" layout="column">
-                                            <!-- content of pages goes here-->
-                                        </div>
+                    template: `<div layout="column">
+                                    <!-- header would be placed here-->
+                                    
+                                    <div ui-view="content" layout="column">
+                                        <!-- content of pages goes here-->
                                     </div>
+                                    
+                                    <!-- footer would be placed here-->
                                 </div>
                                 `
                 };
@@ -34,6 +36,6 @@ angular.module(PAGES_MODULE, [FRONT_PAGE_MODULE, ROVER_PAGE_MODULE, 'ui.router']
                 $stateProvider.state(rootState);
 
                 $urlRouterProvider.otherwise(($injector) => {
-                    $injector.get('$state').go(rootState);
+                    $injector.get('$state').go(frontPageState);
                 });
             }]);

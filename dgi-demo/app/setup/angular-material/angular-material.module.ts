@@ -5,7 +5,7 @@ import "angular-material";
 
 export const SETUP_ANGULAR_MATERIAL = 'setup.angular.material';
 
-const MATERIAL_DESIGN_ICONS_SVG = 'app/setup/angular-material/img/mdi.svg';
+const MATERIAL_DESIGN_ICONS_SVG = 'dgi-demo/app/setup/angular-material/img/mdi.svg';
 
 // https://material.angularjs.org/latest/Theming/03_configuring_a_theme
 angular.module(SETUP_ANGULAR_MATERIAL, ['ngMaterial'])
@@ -27,20 +27,7 @@ angular.module(SETUP_ANGULAR_MATERIAL, ['ngMaterial'])
         //
         // Font Awesome: https://fontawesome.com/
         // <md-icon md-font-icon="fa fa-download"></md-icon>
-        //
-        // Schneider
-        // <md-icon md-font-icon="S-icon S-icon-ups"></md-icon>
 
-    }])
-    .run(['$templateRequest', ($templateRequest) => {
-
-        // Pre-fetch icons sources by URL and cache in the $templateCache...
-        // subsequent $templateRequest calls will look there first.
-
-        let urls = [MATERIAL_DESIGN_ICONS_SVG];
-
-        angular.forEach(urls,  (url) => {
-            $templateRequest(url);
-        });
 
     }]);
+

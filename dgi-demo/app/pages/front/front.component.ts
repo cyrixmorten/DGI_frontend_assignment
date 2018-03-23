@@ -12,14 +12,13 @@ export class FrontPageComponent implements ng.IComponentOptions {
         this.bindings = {
         };
         this.template = `
-            <content-frame frame-title="Please select a rover" hide-back-button="true">
-                <div layout="column" layout-align="start center">
-                    <div layout="row" layout-wrap>
-                        <div ng-repeat="name in rovers" class="animate staggering"> 
-                            <md-button 
-                                class="md-raised"
-                                ui-sref="root.rover({name: name})">{{name}}</md-button>
-                        </div>
+            <content-frame frame-title="Select rover" hide-back-button="true">
+                <div layout="row" layout-align="center center" layout-wrap layout-padding>
+                    <div ng-repeat="name in rovers" class="animate staggering"> 
+                        <md-button 
+                            style="min-width: 150px"
+                            class="md-raised"
+                            ui-sref="root.rover({name: name})">{{name}}</md-button>
                     </div>
                 </div>
             </content-frame>
