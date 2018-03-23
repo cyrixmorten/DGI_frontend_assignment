@@ -27,6 +27,7 @@ export class NasaRoversApi {
         // return _.take(require('../../../data/nasa.json').photos, 10);
 
         let response = await this.$http(httpRequest);
+
         return response.data.photos;
     }
 

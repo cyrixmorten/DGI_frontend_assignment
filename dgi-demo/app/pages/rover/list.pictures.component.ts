@@ -80,8 +80,10 @@ class ListPicturesController {
 
         await this.loadPage(this.page);
 
-        this.$scope.$watch(() => this.page, async (page) => {
-            await this.loadPage(page);
+        this.$scope.$watch(() => this.page, async (page, prevPage) => {
+            if (page !== prevPage) {
+                await this.loadPage(page);
+            }
         })
     }
 
@@ -91,10 +93,8 @@ class ListPicturesController {
             this.roverPictures = await this.NasaRoversApi.query(this.roverName, page);
 
             this.availableCameras = !_.isEmpty(this.roverPictures) ? _.first(this.roverPictures).rover.cameras : [];
+            this.showCameras = this.availableCameras;
 
-            if (this.loadingFirstPage) {
-                this.showCameras = this.availableCameras;
-            }
 
             this.performingQuery = false;
             this.loadingFirstPage = false;
